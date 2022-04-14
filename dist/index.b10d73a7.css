@@ -11434,8 +11434,253 @@ textarea.form-control-lg {
   }
 }
 
-body h1, body .h1 {
-  color: #0d6efd;
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  color: #333;
+  display: -ms-grid;
+  background-color: #fff;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: auto;
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1, .h1 {
+  color: #1186b2;
+  margin-bottom: .5em;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: bold;
+}
+
+h2, .h2 {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: bold;
+}
+
+header {
+  display: -ms-grid;
+  grid-template: 9rem / auto;
+  grid-area: header;
+  display: grid;
+}
+
+@media (max-width: 840px) {
+  header {
+    grid-template: 6rem / auto;
+  }
+}
+
+header.hero {
+  height: 100vh;
+  grid-template: 9rem auto / auto;
+}
+
+@media (max-width: 840px) {
+  header.hero {
+    grid-template: 6rem auto / auto;
+  }
+}
+
+header .header-top {
+  width: 100%;
+  height: 9rem;
+  background: #fff;
+  border-bottom: 1px solid #0000;
+  grid-column: 1;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2rem 4vw;
+  transition: height .5s ease-out, padding .5s ease-out;
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+}
+
+@media (max-width: 840px) {
+  header .header-top {
+    height: 6rem;
+    padding: 1rem 4vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  header .header-top {
+    padding: 2rem calc(50% - 600px);
+  }
+}
+
+header .header-top .header-logo {
+  height: 100%;
+  background: #ccc;
+}
+
+header .header-top .header-logo img {
+  width: auto;
+  height: 100%;
+  background-color: #fff;
+  display: block;
+}
+
+header .header-top .header-nav {
+  margin-top: 0;
+}
+
+header .header-top .header-nav a {
+  padding: 0 1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+header .header-top .header-nav a:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 840px) {
+  header .header-top .header-nav {
+    width: 100vw;
+    height: 100vh;
+    max-width: 400px;
+    z-index: 100;
+    background: #1186b2;
+    padding: 10vw;
+    transition: transform .1s ease-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-y: auto;
+    transform: translateX(100%);
+  }
+
+  header .header-top .header-nav.active {
+    transform: translateX(0);
+  }
+
+  header .header-top .header-nav a {
+    color: #fff;
+    display: block;
+  }
+}
+
+header .header-top .nav-burger-btn {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  z-index: 101;
+  cursor: pointer;
+  background-color: #e156ab;
+  border-radius: 5px;
+  margin-top: 0;
+  padding: 5px;
+  transition: all .5s ease-out;
+  position: absolute;
+  top: 50%;
+  right: -4rem;
+  transform: translateY(-50%);
+}
+
+header .header-top .nav-burger-btn rect {
+  width: 100%;
+  height: 15px;
+  fill: #fff;
+  transition: all .5s ease-out;
+}
+
+header .header-top .nav-burger-btn.active rect:first-child {
+  transform: translate3d(27px, 3px, 0)rotate(45deg);
+}
+
+header .header-top .nav-burger-btn.active rect:nth-child(2) {
+  transform-origin: center;
+  transform: translate3d(0, 1px, 0)rotate(-45deg);
+}
+
+header .header-top .nav-burger-btn.active rect:last-child {
+  opacity: 0;
+  height: 0;
+}
+
+@media (max-width: 840px) {
+  header .header-top .nav-burger-btn {
+    opacity: 1;
+    right: 1rem;
+  }
+}
+
+header.fixed .header-top {
+  height: 5rem;
+  border-color: #0000001a;
+  padding: 1rem 4vw;
+}
+
+@media (max-width: 840px) {
+  header.fixed .header-top {
+    height: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.fixed .header-top {
+    padding: 1rem calc(50% - 600px);
+  }
+}
+
+header .header-hero {
+  grid-area: 2 / 1 / auto / -1;
+  overflow: hidden;
+}
+
+header .header-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main {
+  grid-area: main;
+  margin-top: 0;
+}
+
+main section {
+  width: 100%;
+  margin-top: 0;
+  padding: 20px 4vw;
+}
+
+main section.main-colour {
+  color: #fff;
+  background-color: #1186b2;
+}
+
+main section.second-colour {
+  color: #fff;
+  background-color: #b5da3d;
+}
+
+main section.hero {
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+  main section {
+    padding: 2rem calc(50% - 600px);
+  }
+}
+
+footer {
+  background: pink;
+  grid-area: footer;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */

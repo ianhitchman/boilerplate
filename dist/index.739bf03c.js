@@ -999,19 +999,64 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _bootstrap = require("bootstrap");
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+document.body.onscroll = function() {
+    let header = document.querySelector("header");
+    let scrollPosition = window.scrollY;
+    if (scrollPosition > 70) header.classList.add("fixed");
+    else header.classList.remove("fixed");
+};
+document.querySelector(".nav-burger-btn").onclick = function(e) {
+    let nav = document.querySelector("body nav");
+    let btn = document.querySelector(".nav-burger-btn");
+    nav.classList.toggle("active");
+    btn.classList.toggle("active");
+    return false;
+};
 const App = ()=>{
-    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-        children: "Have a nice day!"
-    }, void 0, false, {
-        fileName: "src/js/index.js",
-        lineNumber: 7,
-        columnNumber: 10
-    }, undefined);
+    return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                children: "Page title"
+            }, void 0, false, {
+                fileName: "src/js/index.js",
+                lineNumber: 25,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Subheading title"
+            }, void 0, false, {
+                fileName: "src/js/index.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur sint similique dolorum consectetur molestiae quo culpa odit, perspiciatis laboriosam iusto. In earum quam repellat autem, maiores tempora ex perferendis."
+            }, void 0, false, {
+                fileName: "src/js/index.js",
+                lineNumber: 27,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Subheading title"
+            }, void 0, false, {
+                fileName: "src/js/index.js",
+                lineNumber: 33,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse officia velit explicabo ratione labore, nesciunt fuga aliquam. Dolore ipsam odio minima laboriosam maiores, blanditiis, eligendi enim aspernatur, tempore minus sequi."
+            }, void 0, false, {
+                fileName: "src/js/index.js",
+                lineNumber: 34,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
 };
 _c = App;
 _reactDomDefault.default.render(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(App, {}, void 0, false, {
     fileName: "src/js/index.js",
-    lineNumber: 10,
+    lineNumber: 44,
     columnNumber: 17
 }, undefined), document.getElementById("root"));
 var _c;

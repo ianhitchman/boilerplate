@@ -1,8 +1,249 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+html,
 body {
-  h1 {
-    color: $primary;
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  grid-template: repeat(3, auto) / auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: bold;
+  color: #1186b2;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: bold;
+}
+
+header {
+  display: -ms-grid;
+  display: grid;
+  grid-template: 9rem / auto;
+  grid-area: header;
+}
+
+@media (max-width: 840px) {
+  header {
+    grid-template: 6rem / auto;
   }
-  
+}
+
+header.hero {
+  height: 100vh;
+  grid-template: 9rem auto/auto;
+}
+
+@media (max-width: 840px) {
+  header.hero {
+    grid-template: 6rem auto/auto;
+  }
+}
+
+header .header-top {
+  grid-column: 1;
+  background: #ffffff;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  transition: height 0.5s ease-out, padding 0.5s ease-out;
+  height: 9rem;
+  padding: 2rem 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid transparent;
+}
+
+@media (max-width: 840px) {
+  header .header-top {
+    padding: 1rem 4vw;
+    height: 6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header .header-top {
+    padding: 2rem calc(calc(100% - 1200px) / 2);
+  }
+}
+
+header .header-top .header-logo {
+  background: #cccccc;
+  height: 100%;
+}
+
+header .header-top .header-logo img {
+  width: auto;
+  height: 100%;
+  display: block;
+  background-color: #ffffff;
+}
+
+header .header-top .header-nav {
+  margin-top: 0;
+}
+
+header .header-top .header-nav a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+header .header-top .header-nav a:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 840px) {
+  header .header-top .header-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10vw;
+    max-width: 400px;
+    background: #1186b2;
+    transform: translateX(100%);
+    transition: transform 0.1s ease-out;
+    z-index: 100;
+  }
+  header .header-top .header-nav.active {
+    transform: translateX(0);
+  }
+  header .header-top .header-nav a {
+    display: block;
+    color: #fff;
+  }
+}
+
+header .header-top .nav-burger-btn {
+  position: absolute;
+  margin-top: 0;
+  right: -4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #e156ab;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  z-index: 101;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+header .header-top .nav-burger-btn rect {
+  width: 100%;
+  height: 15px;
+  fill: #fff;
+  transition: all 0.5s ease-out;
+}
+
+header .header-top .nav-burger-btn.active rect:first-child {
+  transform: translate3d(27px, 3px, 0) rotate(45deg);
+}
+
+header .header-top .nav-burger-btn.active rect:nth-child(2) {
+  transform-origin: center;
+  transform: translate3d(0px, 1px, 0) rotate(-45deg);
+}
+
+header .header-top .nav-burger-btn.active rect:last-child {
+  opacity: 0;
+  height: 0;
+}
+
+@media (max-width: 840px) {
+  header .header-top .nav-burger-btn {
+    right: 1rem;
+    opacity: 1;
+  }
+}
+
+header.fixed .header-top {
+  height: 5rem;
+  padding: 1rem 4vw;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 840px) {
+  header.fixed .header-top {
+    height: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.fixed .header-top {
+    padding: 1rem calc(calc(100% - 1200px) / 2);
+  }
+}
+
+header .header-hero {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  overflow: hidden;
+}
+
+header .header-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main {
+  grid-area: main;
+  margin-top: 0;
+}
+
+main section {
+  margin-top: 0;
+  padding: 20px 4vw;
+  width: 100%;
+}
+
+main section.main-colour {
+  background-color: #1186b2;
+  color: #fff;
+}
+
+main section.second-colour {
+  background-color: #b5da3d;
+  color: #fff;
+}
+
+main section.hero {
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+  main section {
+    padding: 2rem calc(calc(100% - 1200px) / 2);
+  }
+}
+
+footer {
+  background: pink;
+  grid-area: footer;
 }
