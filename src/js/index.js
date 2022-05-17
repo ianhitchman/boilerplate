@@ -1,6 +1,11 @@
 // Import all Bootstrap plugins, or select individually
 import * as bootstrap from "bootstrap";
 import ReactDOM from "react-dom";
+import Test from "./test.svelte";
+
+const test = new Test({
+  target: document.getElementById("root"),
+});
 
 document.body.onscroll = function () {
   let header = document.querySelector("header");
@@ -19,26 +24,26 @@ document.querySelector(".nav-burger-btn").onclick = function (e) {
   return false;
 };
 
-const App = () => {
-  return (
-    <>
-      <h1>Page title</h1>
-      <h2>Subheading title</h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
-        consequuntur sint similique dolorum consectetur molestiae quo culpa
-        odit, perspiciatis laboriosam iusto. In earum quam repellat autem,
-        maiores tempora ex perferendis.
-      </p>
-      <h2>Subheading title</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse officia
-        velit explicabo ratione labore, nesciunt fuga aliquam. Dolore ipsam odio
-        minima laboriosam maiores, blanditiis, eligendi enim aspernatur, tempore
-        minus sequi.
-      </p>
-    </>
-  );
-};
+// const App = () => {
+//   return (
+//     <>
+//       <h1>Page title</h1>
+//       <h2>Subheading title</h2>
+//       <p>
+//         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
+//         consequuntur sint similique dolorum consectetur molestiae quo culpa
+//         odit, perspiciatis laboriosam iusto. In earum quam repellat autem,
+//         maiores tempora ex perferendis.
+//       </p>
+//       <h2>Subheading title</h2>
+//       <p>
+//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse officia
+//         velit explicabo ratione labore, nesciunt fuga aliquam. Dolore ipsam odio
+//         minima laboriosam maiores, blanditiis, eligendi enim aspernatur, tempore
+//         minus sequi.
+//       </p>
+//     </>
+//   );
+// };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// ReactDOM.render(<App />, document.getElementById("root"));
